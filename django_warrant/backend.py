@@ -84,6 +84,7 @@ class AbstractCognitoBackend(ModelBackend):
         return user
 
     def handle_error_response(self, error):
+        return None
         error_code = error.response['Error']['Code']
         if error_code in [
                 AbstractCognitoBackend.UNAUTHORIZED_ERROR_CODE,
